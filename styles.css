@@ -67,7 +67,7 @@ body::before {
     opacity: 1; 
 }
 .opcion-neon:hover a {
-    color: #0059ff; 
+    color: #00e1ff; 
 }
 
 @keyframes rotar {

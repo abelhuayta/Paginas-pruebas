@@ -4,21 +4,33 @@ body {
     font-family: sans-serif;
     background-color: #111;
     color: white;
+    --bg-imagen-before: url('Rallyfnd3.jpg');
+    --bg-imagen-after: url('Rallyfnd4.jpg');
+}
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1.5s ease-in-out;
 }
 body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-image: var(--bg-imagen-before);
+}
+body::after {
+    background-image: var(--bg-imagen-after);
+}
+body.bg-active-before::before { opacity: 0.2; } 
+body.bg-active-before::after  { opacity: 0; }
+body.bg-active-after::before { opacity: 0; }
+body.bg-active-after::after  { opacity: 0.2; }
+.trigger-fondo {
+    height: 1px;
     width: 100%;
-    height: 100%;
-    
-    background-image: url('Rallyfnd3.jpg');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    opacity: 0.2;
-    z-index: -2; 
 }
 .menu-navegacion {
     display: flex; 
@@ -26,6 +38,8 @@ body::before {
     gap: 20px;
     padding: 30px; 
     background-color: #181818;
+    position: relative;
+    z-index: 1;
 }
 .opcion-neon {
     position: relative;
@@ -192,5 +206,61 @@ body::before {
     border-radius: 10px;
 }
 .textoR h1 {
+    margin-top: 0; 
+}
+.Contenido4{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 1000px; 
+    padding: 20px;
+    justify-items: center;
+    margin: 0 auto;
+}
+.Imagenpalomino {
+   position: relative; 
+    padding: 3px;
+    border-radius: 12px; 
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.textoR3{
+    color: white;
+    align-items: center;
+}
+.Imagenpalomino::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    
+    background: conic-gradient(
+        transparent,
+        blue,
+        #d400d4,
+        transparent 30%
+    );
+    
+    animation: rotar 4s linear infinite;
+}
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.Imagenpalomino img {
+    display: block; 
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.textoR3 h1 {
     margin-top: 0; 
 }

@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    font-family: sans-serif;
+}
+
+.cuadro-animado {
+    position: relative;
+    width: 300px;
+    background-color: transparent;
+    border-radius: 80px;
+    padding: 4px; 
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cuadro-animado::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    
+    background: conic-gradient(
+        transparent,
+        transparent,
+        #00ccff,
+        #d400d4
+    );
+    
+    animation: rotar 4s linear infinite;
+}
+
+.contenido {
+    background-color: #1c1c1c; 
+    padding: 40px; 
+    border-radius: 80px; 
+    color: white;
+    text-align: center;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

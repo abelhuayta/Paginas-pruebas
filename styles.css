@@ -181,17 +181,14 @@ body {
 }
 .Maparuta {
   flex: 1;
-  /* (Opcional) Esto evita que el mapa sea más grande que su ancho original */
   max-width: 600px; 
 }
 .Maparuta iframe {
-  width: 100%; /* El mapa se adapta a la columna */
+  width: 100%; 
   height: 600px;
-  border: 0; /* Quita el borde por defecto de los iframes */
+  border: 0; 
 }
 .Descripcion {
   flex: 1;
-  /* 4. ¡LA CLAVE DE TU PREGUNTA! */
-  /* Centra el texto DENTRO de esta columna */
   text-align: center; 
 }

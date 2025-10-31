@@ -1,3 +1,27 @@
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f4f4f4;       
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+.site-footer p {
+    margin: 8px 0; 
+}
+.site-footer a {
+    color: #50aeff;         
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1rem;
+}
+.site-footer a:hover {
+    text-decoration: underline; 
+}
 body {
     margin: 0;
     padding: 0;
@@ -60,8 +84,8 @@ body.bg-active-after::after  { opacity: 0.2; }
     
     background: conic-gradient(
         transparent,
-        rgba(0, 17, 255, 0.7),
-        rgba(212, 0, 212, 0.7), 
+         rgba(217, 186, 6, 0.7),
+        rgba(237, 237, 237, 0.7), 
         transparent
     );
     animation: rotar 4s linear infinite;
@@ -81,7 +105,7 @@ body.bg-active-after::after  { opacity: 0.2; }
     opacity: 1; 
 }
 .opcion-neon:hover a {
-    color: #00e1ff; 
+    color: rgb(180, 154, 8);  
 }
 
 @keyframes rotar {

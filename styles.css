@@ -1,3 +1,27 @@
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #f4f4f4;       
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+.site-footer p {
+    margin: 8px 0; 
+}
+.site-footer a {
+    color: #50aeff;         
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1rem;
+}
+.site-footer a:hover {
+    text-decoration: underline; 
+}
 body {
     margin: 0;
     padding: 0;
@@ -5,20 +29,64 @@ body {
     background-color: #111;
     color: white;
 }
-body::before {
-    content: '';
+ .fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh;  
+    z-index: -1; 
+}
+.ContenidoIntro {
+    max-width: 1000px; 
+    
+    margin: 20px auto; 
+    padding: 20px;
+    
+    text-align: center; 
+    font-size: 1.1rem;  
+    line-height: 1.6;  
+    
+   
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+}
+
+.ContenidoIntro p {
+    margin: 0; 
+}
+
+.ContenidoIntro strong {
+    color: #e5c100; 
+}
+.fondo img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     
-    background-image: url('Rallyfnd2.jpg');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    opacity: 0.2;
-    z-index: -2; 
+    object-fit: cover; 
+}
+
+.img-encima {
+    opacity: 0;
+    
+    transition: opacity 1.5s ease-in-out;
+}
+
+.fondo.visible .img-encima {
+    opacity: 1;/
+}
+.ContenidoP {
+    position: relative;
+    z-index: 1;        
+
+}
+
+
+#trigger-fundido {
+    height: 10px;
 }
 .menu-navegacion {
     display: flex; 
@@ -46,8 +114,8 @@ body::before {
     
     background: conic-gradient(
         transparent,
-        rgba(0, 17, 255, 0.7),
-        rgba(212, 0, 212, 0.7), 
+        rgba(217, 186, 6, 0.7),
+        rgba(237, 237, 237, 0.7), 
         transparent
     );
     animation: rotar 4s linear infinite;
@@ -67,7 +135,7 @@ body::before {
     opacity: 1; 
 }
 .opcion-neon:hover a {
-    color: #00e1ff; 
+    color: rgb(180, 154, 8); 
 }
 
 @keyframes rotar {
@@ -80,6 +148,7 @@ body::before {
 }
 .Contenido1{
     text-align: center;
+    
 }
 .Contenido2{
     display: flex;
@@ -90,34 +159,14 @@ body::before {
     justify-items: center;
     margin: 0 auto;
 }
-.Imagenruta {
-   position: relative; 
-    padding: 3px;
-    border-radius: 12px; 
-    overflow: hidden;
-    flex-shrink: 0;
-}
-.textoR{
-    color: white;
+.Contenido3{
+    display: flex;
     align-items: center;
-}
-.Imagenruta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1; /* Lo pone detrás de la imagen */
-    
-    background: conic-gradient(
-        transparent,
-        blue,
-        #d400d4,
-        transparent 30%
-    );
-    
-    animation: rotar 4s linear infinite;
+    gap: 25px;
+    max-width: 1000px; 
+    padding: 20px;
+    justify-items: center;
+    margin: 0 auto;
 }
 @keyframes rotar {
     from {
@@ -127,13 +176,22 @@ body::before {
         transform: rotate(360deg);
     }
 }
-.Imagenruta img {
-    display: block; 
-    width: 600px;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 10px;
-}
 .textoR h1 {
     margin-top: 0; 
+}
+.Maparuta {
+  flex: 1;
+  /* (Opcional) Esto evita que el mapa sea más grande que su ancho original */
+  max-width: 600px; 
+}
+.Maparuta iframe {
+  width: 100%; /* El mapa se adapta a la columna */
+  height: 600px;
+  border: 0; /* Quita el borde por defecto de los iframes */
+}
+.Descripcion {
+  flex: 1;
+  /* 4. ¡LA CLAVE DE TU PREGUNTA! */
+  /* Centra el texto DENTRO de esta columna */
+  text-align: center; 
 }
